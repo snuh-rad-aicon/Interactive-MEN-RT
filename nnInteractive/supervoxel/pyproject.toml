@@ -1,0 +1,56 @@
+[project]
+name = "nnInteractiveSuperVoxel"
+version = "0.1.0"
+requires-python = ">=3.9"
+description = "Sam based 3D SuperVoxel generation."
+readme = "readme.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Maximilian Rokuss", email = "maximilian.rokuss@dkfz-heidelberg.de"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Healthcare Industry",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+keywords = [
+    'deep learning',
+    'image segmentation',
+    'semantic segmentation',
+    'medical image analysis',
+    'medical image segmentation',
+    'sam',
+    'segment anything'
+]
+dependencies = [
+    "numpy>=1.24",
+    "SimpleITK>=2.2.1",
+    "segment-anything @ git+https://github.com/facebookresearch/segment-anything.git",
+    "opencv-python-headless>=4.10.0.84",
+    "blosc2>=3.0.0b1",
+    "connected-components-3d>=3.21.0",
+    "scikit-image>=0.24.0",
+    "pandas>=2.2.3"
+]
+
+
+[project.scripts]
+SuperVoxel_generate = "run:run_entrypoint"
+SuperVoxel_save_fg_location = "run:run_save_fg_locations_entrypoint"
+
+
+
+[build-system]
+requires = ["setuptools>=67.8.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.codespell]
+skip = '.git,*.pdf,*.svg'
+#
+# ignore-words-list = ''

@@ -1,0 +1,7 @@
+# Config to process nnUNet_preprocessed folders
+
+file_format: ".b2nd"
+excluded_strings: "_seg.b2nd"
+sam1_checkpoint: "/path/to/sam/sam_vit_h_4b8939.pth"
+sam2_checkpoint: "/path/to/sam2/sam2.1_hiera_large.pt"
+masks_per_image: 20
